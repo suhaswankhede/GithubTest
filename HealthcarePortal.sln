@@ -1,0 +1,170 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+
+# Core Infrastructure Projects
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.Core", "src\HealthcarePortal.Core\HealthcarePortal.Core.csproj", "{A1B2C3D4-E5F6-7890-ABCD-123456789012}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.Infrastructure", "src\HealthcarePortal.Infrastructure\HealthcarePortal.Infrastructure.csproj", "{B2C3D4E5-F6A7-8901-BCDE-234567890123}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.Shared", "src\HealthcarePortal.Shared\HealthcarePortal.Shared.csproj", "{C3D4E5F6-A7B8-9012-CDEF-345678901234}"
+EndProject
+
+# Member Portal Modules
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.Member.Dashboard", "src\Modules\Member\HealthcarePortal.Member.Dashboard\HealthcarePortal.Member.Dashboard.csproj", "{D4E5F6A7-B8C9-0123-DEF0-456789012345}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.Member.Benefits", "src\Modules\Member\HealthcarePortal.Member.Benefits\HealthcarePortal.Member.Benefits.csproj", "{E5F6A7B8-C9D0-1234-EF01-567890123456}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.Member.VirtualAssistant", "src\Modules\Member\HealthcarePortal.Member.VirtualAssistant\HealthcarePortal.Member.VirtualAssistant.csproj", "{F6A7B8C9-D0E1-2345-F012-678901234567}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.Member.Claims", "src\Modules\Member\HealthcarePortal.Member.Claims\HealthcarePortal.Member.Claims.csproj", "{A7B8C9D0-E1F2-3456-0123-789012345678}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.Member.FindCare", "src\Modules\Member\HealthcarePortal.Member.FindCare\HealthcarePortal.Member.FindCare.csproj", "{B8C9D0E1-F2A3-4567-1234-890123456789}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.Member.TrackRequests", "src\Modules\Member\HealthcarePortal.Member.TrackRequests\HealthcarePortal.Member.TrackRequests.csproj", "{C9D0E1F2-A3B4-5678-2345-901234567890}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.Member.CareJourney", "src\Modules\Member\HealthcarePortal.Member.CareJourney\HealthcarePortal.Member.CareJourney.csproj", "{D0E1F2A3-B4C5-6789-3456-012345678901}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.Member.Wellness", "src\Modules\Member\HealthcarePortal.Member.Wellness\HealthcarePortal.Member.Wellness.csproj", "{E1F2A3B4-C5D6-7890-4567-123456789012}"
+EndProject
+
+# Provider Portal Modules
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.Provider.MemberLookup", "src\Modules\Provider\HealthcarePortal.Provider.MemberLookup\HealthcarePortal.Provider.MemberLookup.csproj", "{F2A3B4C5-D6E7-8901-5678-234567890123}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.Provider.Eligibility", "src\Modules\Provider\HealthcarePortal.Provider.Eligibility\HealthcarePortal.Provider.Eligibility.csproj", "{A3B4C5D6-E7F8-9012-6789-345678901234}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.Provider.Claims", "src\Modules\Provider\HealthcarePortal.Provider.Claims\HealthcarePortal.Provider.Claims.csproj", "{B4C5D6E7-F8A9-0123-7890-456789012345}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.Provider.Authorization", "src\Modules\Provider\HealthcarePortal.Provider.Authorization\HealthcarePortal.Provider.Authorization.csproj", "{C5D6E7F8-A9B0-1234-8901-567890123456}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.Provider.CareGaps", "src\Modules\Provider\HealthcarePortal.Provider.CareGaps\HealthcarePortal.Provider.CareGaps.csproj", "{D6E7F8A9-B0C1-2345-9012-678901234567}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.Provider.Messaging", "src\Modules\Provider\HealthcarePortal.Provider.Messaging\HealthcarePortal.Provider.Messaging.csproj", "{E7F8A9B0-C1D2-3456-0123-789012345678}"
+EndProject
+
+# AI & Automation Layers
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.AI.Assistant", "src\AI\HealthcarePortal.AI.Assistant\HealthcarePortal.AI.Assistant.csproj", "{F8A9B0C1-D2E3-4567-1234-890123456789}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.AI.ClaimsExplanation", "src\AI\HealthcarePortal.AI.ClaimsExplanation\HealthcarePortal.AI.ClaimsExplanation.csproj", "{A9B0C1D2-E3F4-5678-2345-901234567890}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.AI.CoverageQA", "src\AI\HealthcarePortal.AI.CoverageQA\HealthcarePortal.AI.CoverageQA.csproj", "{B0C1D2E3-F4A5-6789-3456-012345678901}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.AI.RulesEngine", "src\AI\HealthcarePortal.AI.RulesEngine\HealthcarePortal.AI.RulesEngine.csproj", "{C1D2E3F4-A5B6-7890-4567-123456789012}"
+EndProject
+
+# Web Applications
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.Web.Member", "src\Web\HealthcarePortal.Web.Member\HealthcarePortal.Web.Member.csproj", "{D2E3F4A5-B6C7-8901-5678-234567890123}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.Web.Provider", "src\Web\HealthcarePortal.Web.Provider\HealthcarePortal.Web.Provider.csproj", "{E3F4A5B6-C7D8-9012-6789-345678901234}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthcarePortal.API", "src\Web\HealthcarePortal.API\HealthcarePortal.API.csproj", "{F4A5B6C7-D8E9-0123-7890-456789012345}"
+EndProject
+
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1B2C3D4-E5F6-7890-ABCD-123456789012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-123456789012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-123456789012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-E5F6-7890-ABCD-123456789012}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C3D4E5-F6A7-8901-BCDE-234567890123}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C3D4E5-F6A7-8901-BCDE-234567890123}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C3D4E5-F6A7-8901-BCDE-234567890123}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C3D4E5-F6A7-8901-BCDE-234567890123}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3D4E5F6-A7B8-9012-CDEF-345678901234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3D4E5F6-A7B8-9012-CDEF-345678901234}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3D4E5F6-A7B8-9012-CDEF-345678901234}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3D4E5F6-A7B8-9012-CDEF-345678901234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4E5F6A7-B8C9-0123-DEF0-456789012345}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4E5F6A7-B8C9-0123-DEF0-456789012345}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4E5F6A7-B8C9-0123-DEF0-456789012345}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4E5F6A7-B8C9-0123-DEF0-456789012345}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5F6A7B8-C9D0-1234-EF01-567890123456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5F6A7B8-C9D0-1234-EF01-567890123456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5F6A7B8-C9D0-1234-EF01-567890123456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5F6A7B8-C9D0-1234-EF01-567890123456}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6A7B8C9-D0E1-2345-F012-678901234567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6A7B8C9-D0E1-2345-F012-678901234567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6A7B8C9-D0E1-2345-F012-678901234567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6A7B8C9-D0E1-2345-F012-678901234567}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7B8C9D0-E1F2-3456-0123-789012345678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7B8C9D0-E1F2-3456-0123-789012345678}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7B8C9D0-E1F2-3456-0123-789012345678}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7B8C9D0-E1F2-3456-0123-789012345678}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8C9D0E1-F2A3-4567-1234-890123456789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8C9D0E1-F2A3-4567-1234-890123456789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8C9D0E1-F2A3-4567-1234-890123456789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8C9D0E1-F2A3-4567-1234-890123456789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9D0E1F2-A3B4-5678-2345-901234567890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9D0E1F2-A3B4-5678-2345-901234567890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9D0E1F2-A3B4-5678-2345-901234567890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9D0E1F2-A3B4-5678-2345-901234567890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0E1F2A3-B4C5-6789-3456-012345678901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0E1F2A3-B4C5-6789-3456-012345678901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0E1F2A3-B4C5-6789-3456-012345678901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0E1F2A3-B4C5-6789-3456-012345678901}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1F2A3B4-C5D6-7890-4567-123456789012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1F2A3B4-C5D6-7890-4567-123456789012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1F2A3B4-C5D6-7890-4567-123456789012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1F2A3B4-C5D6-7890-4567-123456789012}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2A3B4C5-D6E7-8901-5678-234567890123}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2A3B4C5-D6E7-8901-5678-234567890123}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2A3B4C5-D6E7-8901-5678-234567890123}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2A3B4C5-D6E7-8901-5678-234567890123}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3B4C5D6-E7F8-9012-6789-345678901234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3B4C5D6-E7F8-9012-6789-345678901234}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3B4C5D6-E7F8-9012-6789-345678901234}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3B4C5D6-E7F8-9012-6789-345678901234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4C5D6E7-F8A9-0123-7890-456789012345}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4C5D6E7-F8A9-0123-7890-456789012345}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4C5D6E7-F8A9-0123-7890-456789012345}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C5D6E7-F8A9-0123-7890-456789012345}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5D6E7F8-A9B0-1234-8901-567890123456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5D6E7F8-A9B0-1234-8901-567890123456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5D6E7F8-A9B0-1234-8901-567890123456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5D6E7F8-A9B0-1234-8901-567890123456}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6E7F8A9-B0C1-2345-9012-678901234567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E7F8A9-B0C1-2345-9012-678901234567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E7F8A9-B0C1-2345-9012-678901234567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E7F8A9-B0C1-2345-9012-678901234567}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7F8A9B0-C1D2-3456-0123-789012345678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7F8A9B0-C1D2-3456-0123-789012345678}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7F8A9B0-C1D2-3456-0123-789012345678}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7F8A9B0-C1D2-3456-0123-789012345678}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8A9B0C1-D2E3-4567-1234-890123456789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8A9B0C1-D2E3-4567-1234-890123456789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8A9B0C1-D2E3-4567-1234-890123456789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8A9B0C1-D2E3-4567-1234-890123456789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9B0C1D2-E3F4-5678-2345-901234567890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9B0C1D2-E3F4-5678-2345-901234567890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9B0C1D2-E3F4-5678-2345-901234567890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9B0C1D2-E3F4-5678-2345-901234567890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0C1D2E3-F4A5-6789-3456-012345678901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0C1D2E3-F4A5-6789-3456-012345678901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0C1D2E3-F4A5-6789-3456-012345678901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0C1D2E3-F4A5-6789-3456-012345678901}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1D2E3F4-A5B6-7890-4567-123456789012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1D2E3F4-A5B6-7890-4567-123456789012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1D2E3F4-A5B6-7890-4567-123456789012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1D2E3F4-A5B6-7890-4567-123456789012}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2E3F4A5-B6C7-8901-5678-234567890123}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2E3F4A5-B6C7-8901-5678-234567890123}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2E3F4A5-B6C7-8901-5678-234567890123}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2E3F4A5-B6C7-8901-5678-234567890123}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3F4A5B6-C7D8-9012-6789-345678901234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3F4A5B6-C7D8-9012-6789-345678901234}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3F4A5B6-C7D8-9012-6789-345678901234}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3F4A5B6-C7D8-9012-6789-345678901234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4A5B6C7-D8E9-0123-7890-456789012345}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4A5B6C7-D8E9-0123-7890-456789012345}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4A5B6C7-D8E9-0123-7890-456789012345}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4A5B6C7-D8E9-0123-7890-456789012345}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
