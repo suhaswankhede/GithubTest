@@ -1,0 +1,217 @@
+@page "/edi-reader"
+@rendermode InteractiveServer
+@using EdiX12Reader.Models
+@using EdiX12Reader.Services
+@inject EdiX12Parser Parser
+
+<PageTitle>EDI X12 Reader</PageTitle>
+
+<h1>EDI X12 Reader</h1>
+<p>Upload and parse EDI X12 format files (837 Healthcare Claim & 835 Payment/Remittance)</p>
+
+<div class="mb-3">
+    <label class="form-label">Paste EDI X12 Content:</label>
+    <textarea class="form-control" rows="10" @bind="ediContent" placeholder="Paste your EDI X12 content here..."></textarea>
+</div>
+
+<div class="mb-3">
+    <button class="btn btn-primary" @onclick="ParseEdi">Parse EDI</button>
+    <button class="btn btn-secondary ms-2" @onclick="ClearContent">Clear</button>
+    <button class="btn btn-info ms-2" @onclick="LoadSample837">Load Sample 837</button>
+    <button class="btn btn-info ms-2" @onclick="LoadSample835">Load Sample 835</button>
+</div>
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger" role="alert">
+        <strong>Error:</strong> @errorMessage
+    </div>
+}
+
+@if (parsedDocument != null)
+{
+    <div class="card mb-3">
+        <div class="card-header bg-success text-white">
+            <h5>Document Information</h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-sm">
+                <tbody>
+                    <tr>
+                        <td><strong>Document Type:</strong></td>
+                        <td>@parsedDocument.DocumentType</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sender ID:</strong></td>
+                        <td>@parsedDocument.SenderId</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Receiver ID:</strong></td>
+                        <td>@parsedDocument.ReceiverId</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Interchange Control Number:</strong></td>
+                        <td>@parsedDocument.InterchangeControlNumber</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Transaction Set Control Number:</strong></td>
+                        <td>@parsedDocument.TransactionSetControlNumber</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Segments:</strong></td>
+                        <td>@parsedDocument.Segments.Count</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Parsed Date:</strong></td>
+                        <td>@parsedDocument.ParsedDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h5>Segments Detail</h5>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th style="width: 50px;">Line</th>
+                            <th style="width: 100px;">Segment ID</th>
+                            <th style="width: 250px;">Description</th>
+                            <th>Elements</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var segment in parsedDocument.Segments)
+                        {
+                            <tr>
+                                <td>@segment.LineNumber</td>
+                                <td><span class="badge bg-info">@segment.SegmentId</span></td>
+                                <td>@GetSegmentDescription(segment.SegmentId)</td>
+                                <td>
+                                    <small>
+                                        @for (int i = 0; i < segment.Elements.Count; i++)
+                                        {
+                                            <span class="me-2">
+                                                <strong>[@(i + 1)]:</strong> @segment.Elements[i]
+                                            </span>
+                                            @if ((i + 1) % 3 == 0)
+                                            {
+                                                <br />
+                                            }
+                                        }
+                                    </small>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private string ediContent = string.Empty;
+    private EdiDocument? parsedDocument;
+    private string errorMessage = string.Empty;
+
+    private void ParseEdi()
+    {
+        try
+        {
+            errorMessage = string.Empty;
+            parsedDocument = Parser.ParseEdiContent(ediContent);
+        }
+        catch (Exception ex)
+        {
+            errorMessage = ex.Message;
+            parsedDocument = null;
+        }
+    }
+
+    private void ClearContent()
+    {
+        ediContent = string.Empty;
+        parsedDocument = null;
+        errorMessage = string.Empty;
+    }
+
+    private string GetSegmentDescription(string segmentId)
+    {
+        var descriptions = Parser.GetSegmentDescription(segmentId);
+        return descriptions.ContainsKey(segmentId) ? descriptions[segmentId] : "Unknown Segment";
+    }
+
+    private void LoadSample837()
+    {
+        // Sample EDI 837 Professional Healthcare Claim
+        ediContent = @"ISA*00*          *00*          *ZZ*SUBMITTER      *ZZ*RECEIVER       *230101*1200*^*00501*000000001*0*P*:~
+GS*HC*SUBMITTER*RECEIVER*20230101*1200*1*X*005010X222A1~
+ST*837*0001*005010X222A1~
+BHT*0019*00*123456*20230101*1200*CH~
+NM1*41*2*BILLING PROVIDER*****46*12345~
+NM1*40*2*RECEIVER NAME*****46*67890~
+HL*1**20*1~
+NM1*85*2*PROVIDER NAME*****XX*1234567890~
+N3*123 MAIN ST~
+N4*CITY*CA*12345~
+REF*EI*123456789~
+HL*2*1*22*0~
+SBR*P*18*******CI~
+NM1*IL*1*DOE*JOHN****MI*123456789~
+N3*456 ELM ST~
+N4*TOWN*CA*54321~
+CLM*PATIENT123*100***11:B:1*Y*A*Y*Y~
+DTP*434*RD8*20230101-20230101~
+HI*BK:Z1234~
+LX*1~
+SV1*HC:99213*100*UN*1***1~
+DTP*472*D8*20230101~
+SE*24*0001~
+GE*1*1~
+IEA*1*000000001~";
+        
+        errorMessage = string.Empty;
+        parsedDocument = null;
+    }
+
+    private void LoadSample835()
+    {
+        // Sample EDI 835 Healthcare Payment/Remittance Advice
+        ediContent = @"ISA*00*          *00*          *ZZ*PAYER          *ZZ*PROVIDER       *230115*1430*^*00501*000000002*0*P*:~
+GS*HP*PAYER*PROVIDER*20230115*1430*2*X*005010X221A1~
+ST*835*0002*005010X221A1~
+BPR*I*1000.00*C*ACH*CCP*01*123456789*DA*987654321*1234567890**01*999888777*DA*999999999*20230115~
+TRN*1*12345678901*1234567890~
+REF*EV*PAYMENT123~
+DTM*405*20230115~
+N1*PR*INSURANCE COMPANY~
+N3*789 INSURANCE AVE~
+N4*METRO*CA*98765~
+N1*PE*PROVIDER CLINIC*XX*9876543210~
+REF*TJ*123456789~
+LX*1~
+CLP*CLAIM001*1*150.00*120.00**12*1234567890*11~
+CAS*CO*45*30.00~
+NM1*QC*1*SMITH*JANE****MI*987654321~
+NM1*82*1*DOE*JOHN****XX*1234567890~
+DTM*232*20230101~
+DTM*233*20230101~
+AMT*AU*150.00~
+SVC*HC:99213*150.00*120.00**1~
+DTM*472*20230101~
+CAS*CO*45*30.00~
+AMT*B6*120.00~
+SE*26*0002~
+GE*1*2~
+IEA*1*000000002~";
+        
+        errorMessage = string.Empty;
+        parsedDocument = null;
+    }
+}
